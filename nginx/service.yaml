@@ -18,7 +18,8 @@ spec:
         "beta.kubernetes.io/os": linux
       containers:
       - name: azure-vote-front
-        image: nginx
+        image: cnguerlainclientelingallallacr.azurecr.cn/nginx:1.13
+        # image: nginx:1.14
         ports:
         - containerPort: 80
         resources:
@@ -26,6 +27,8 @@ spec:
             cpu: 250m
           limits:
             cpu: 500m
+      imagePullSecrets:
+      - name: cnguerlainclientelingallallacr
 ---
 apiVersion: v1
 kind: Service
